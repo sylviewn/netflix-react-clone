@@ -3,14 +3,8 @@ pipeline {
     options {
         timeout(time: 20, unit: 'MINUTES')
     }
-    stages{
-        // NPM dependencies
-        stage('pull npm dependencies') {
-            steps {
-                sh 'npm install'
-            }
-        }
-       stage('build Docker Image') {
+
+    stage('build Docker Image') {
             steps {
                 script {
                     // build image
