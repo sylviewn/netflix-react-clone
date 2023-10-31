@@ -26,7 +26,7 @@ pipeline {
         stage('Push to ECR') {
             steps {
                 script {
-                    docker.withRegistry('https://429718069504.dkr.ecr.us-east-1.amazonaws.com/netflix-oct:v1', 'ecr:us-east-1:sylviewn-acr') {
+                    docker.withRegistry('https://429718069504.dkr.ecr.us-east-1.amazonaws.com/netflix-oct:v1', 'ecr:us-east-1:sylviewn-ecr') {
                         // build image
                         def myImage = docker.build("429718069504.dkr.ecr.us-east-1.amazonaws.com/netflix-oct:v1")
                         // push image
