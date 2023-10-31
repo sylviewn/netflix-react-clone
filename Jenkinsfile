@@ -8,7 +8,7 @@ pipeline {
             steps {
                 script {
                     // build image
-                    docker.build("429718069504.dkr.ecr.us-east-1.amazonaws.com/netflix-oct: v1")
+                    docker.build("429718069504.dkr.ecr.us-east-1.amazonaws.com/netflix-oct:v1")
                }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script{
                     //https://<AwsAccountNumber>.dkr.ecr.<region>.amazonaws.com/netflix-app', 'ecr:<region>:<credentialsId>
-                    docker.withRegistry('https://429718069504.dkr.ecr.us-east-1.amazonaws.com/netflix-oct:v1', 'ecr:us-east-1:sylviewn-acr') {
+                    docker.withRegistry('https://429718069504.dkr.ecr.us-east-1.amazonaws.com/netflix-oct', 'ecr:us-east-1:sylviewn-ecr') {
                     // build image
                     def myImage = docker.build("429718069504.dkr.ecr.us-east-1.amazonaws.com/netflix-oct:v1")
                     // push image
